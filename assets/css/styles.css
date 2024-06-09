@@ -1,0 +1,213 @@
+@import url(../css/literata.css);
+
+:root {
+    --c-brandl :white;
+    --c-dark: #212529;
+    --c-brand: #34789D; 
+    --c-brand-light: #7BBFCC; 
+    --c-brand-rgb: 26, 105, 120;
+    --c-body: #474747;
+    --font-base: "Literata", sans-serif;
+    --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
+    --transition: all 0.5s ease;
+}
+
+body {
+    font-family: var(--font-base);
+    line-height: 1.7;
+    color: var(--c-body);
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: 600;
+    color: var(--c-dark);
+}
+
+a {
+    text-decoration: none;
+    color: var(--c-brand);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--c-brand-light);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section-padding {
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+/* NAVBAR */
+
+.navbar {
+    box-shadow: var(--box-shadow);
+}
+
+.custom-navbar {
+    background-color: var(--c-brand);
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: var(--c-brandl);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--c-brand);
+}
+
+.navbar-brand img {
+    max-width: 100px;
+    height: auto;
+}
+
+/* HOME */
+
+#home{ 
+    background: linear-gradient(rgba(var(--c-brand-rgb), 0.585),rgba(var(--c-brand-rgb), 0.585)), url(../images//home2.JPG);
+    background-position: center;
+    background-size:cover;
+}
+#home h5 {
+    width: 60%; /* Set the desired width for the h5 element */
+    margin: auto; /* Center the h5 element within its container */
+    padding: 10px 0; /* Add vertical padding for better spacing */
+    border-top: 2px solid #ffffff; /* Add a top border */
+    border-bottom: 2px solid #ffffff; /* Add a bottom border */
+    text-align: center; /* Center the text within the h5 element */
+}
+
+/* SECTION TITLE */
+.section-title{
+    margin-bottom: 60px;
+}
+.section-title .line{
+    width: 60px;
+    height: 4px;
+    background-color: var(--c-brand);
+    margin: 16px auto 24px auto;
+}
+ .section-title p{ 
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+/* ICONBOX */
+.iconbox{
+    width:60px;
+    height: 60px;
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--c-brand);
+    font-size: 24px;
+    background: rgba(var(--c-brand-rgb),0.04);
+    flex:none;
+    border-radius: 10px;
+}
+/* Increase font size for the phone number */
+.iconbox + div h5 {
+    font-size: 1.25rem; /* Adjust the font size as needed */
+    margin: 0; /* Reset margins to prevent unwanted spacing */
+}
+
+/* Adjust alignment */
+#about .d-flex {
+    align-items: center; /* Vertically center align items within the flex container */
+}
+
+
+
+
+/* CHEFS*/
+.chef-card {
+    position: relative;
+    background: #f7f7f7;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    margin: 10px;
+    padding: 0;
+    height: 240px;
+  }
+  
+  .chef-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .chef-card-content {
+    padding: 15px;
+    height: 30%;
+    overflow: hidden;
+  }
+  
+  .chef-card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color:var(--c-dark);
+  }
+  
+  .chef-card-subtitle {
+    font-style: italic;
+    color: #777;
+  }
+  
+  
+  
+  .team-member {
+    position: relative;
+  }
+  
+  .team-title {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(var(--c-brand-rgb),0.6);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .team-member:hover .team-title {
+    display: block;
+  }
+  
+  .rating-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: #F4A261;
+    margin-top: 10px;
+  }
+  
+  .rating-box .star {
+    font-size: 18px;
+    margin-right: 5px;
+  }
+  
+  .rating-box .rating,
+  .rating-box .services {
+    font-size: 14px;
+  }
+  
+  .rating-box .services {
+    margin-left: 5px;
+  }
+  
+
+
+
