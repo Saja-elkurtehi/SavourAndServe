@@ -3,13 +3,16 @@
 :root {
     --c-brandl :white;
     --c-dark: #212529;
-    --c-brand: #34789D; 
+    --c-brand: #34789d; 
     --c-brand-light: #7BBFCC; 
-    --c-brand-rgb: 26, 105, 120;
+    --c-brand-rgb: 52, 120, 157;
     --c-body: #474747;
     --font-base: "Literata", sans-serif;
     --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
     --transition: all 0.5s ease;
+
+
+    
 }
 
 body {
@@ -22,6 +25,8 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: 600;
     color: var(--c-dark);
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 a {
@@ -40,8 +45,8 @@ img {
 }
 
 .section-padding {
-    padding-top: 140px;
-    padding-bottom: 140px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 /* NAVBAR */
@@ -74,6 +79,8 @@ img {
     background: linear-gradient(rgba(var(--c-brand-rgb), 0.585),rgba(var(--c-brand-rgb), 0.585)), url(../images//home2.JPG);
     background-position: center;
     background-size:cover;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7); /* Add shadow to text for better readability */
+
 }
 #home h5 {
     width: 60%; /* Set the desired width for the h5 element */
@@ -86,7 +93,9 @@ img {
 
 /* SECTION TITLE */
 .section-title{
-    margin-bottom: 60px;
+    margin-bottom: 50px; /* Adjust spacing for better alignment */
+    text-align: center;
+
 }
 .section-title .line{
     width: 60px;
@@ -98,6 +107,8 @@ img {
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+    color: var(--c-dark); /* Adjust text color for better readability */
+
  }
 
 /* ICONBOX */
@@ -112,6 +123,8 @@ img {
     background: rgba(var(--c-brand-rgb),0.04);
     flex:none;
     border-radius: 10px;
+    transition: var(--transition); /* Add transition for hover effects */
+
 }
 /* Increase font size for the phone number */
 .iconbox + div h5 {
@@ -125,66 +138,106 @@ img {
 }
 
 
-
-
-/* CHEFS*/
-.chef-card {
+ /* IMAGE ZOOM*/ 
+image-zoom{
     position: relative;
-    background: #f7f7f7;
+    overflow: hidden;
+}
+.image-zoom-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.image-zoom-wrapper img {
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+.image-zoom-wrapper:hover img {
+    transform: scale(1.1); /* Scale the image on hover */
+}
+/* SERVICE CARDS */
+.service-card {
+    position: relative;
+    overflow: hidden;
     border-radius: 10px;
-    overflow: hidden;
-    text-align: center;
-    margin: 10px;
-    padding: 0;
-    height: 240px;
-  }
-  
-  .chef-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-  }
-  
-  .chef-card-content {
-    padding: 15px;
-    height: 30%;
-    overflow: hidden;
-  }
-  
-  .chef-card-title {
-    font-size: 1.2em;
-    font-weight: bold;
-    color:var(--c-dark);
-  }
-  
-  .chef-card-subtitle {
-    font-style: italic;
-    color: #777;
-  }
-  
-  
-  
-  .team-member {
-    position: relative;
-  }
-  
-  .team-title {
-    display: none;
+}
+
+.service-overlay {
     position: absolute;
-    bottom: 0;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    padding: 20px;
+    transition: bottom 0.3s ease;
     width: 100%;
     background-color: rgba(var(--c-brand-rgb),0.6);
     color: #fff;
-    padding: 10px;
     text-align: center;
     border-radius: 0 0 10px 10px;
+}
+
+.service-card:hover .service-overlay {
+    bottom: 0;
+}
+
+/* CHEFS*/
+
+.chef-overlay{
+    background: rgba(var(--c-brand-rgb),0.8);
+    position: absolute;
+    bottom:0;
+    left: 50%;
+    width: 100%;
+    color: #fff;
+   transform: translateX(-50%);
+   padding: 24px;
+   transition: var(--transition);
+   opacity: 0;
   }
-  
-  .team-member:hover .team-title {
-    display: block;
-  }
-  
+  .chef-card-1 {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-right: 0px;
+    width:250px;
+}
+
+  .chef-card-2 {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-left: 0px;
+ 
+    width:250px;
+}
+
+.chef-card-3 {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-left: 0px;
+    width:250px;
+}
+
+
+
+
+.chef-card-1:hover .chef-overlay {
+    bottom: 0;
+    opacity: 1;
+}
+.chef-card-2:hover .chef-overlay {
+    bottom: 0;
+    opacity: 1;
+}
+.chef-card-3:hover .chef-overlay {
+    bottom: 0;
+    opacity: 1;
+}
+ 
+ 
+ 
   .rating-box {
     display: flex;
     align-items: center;
@@ -207,7 +260,170 @@ img {
   .rating-box .services {
     margin-left: 5px;
   }
+/* BOOKING*/
+#book{
+    position: relative;
+    z-index: 2;
+    
+}
+#book::after{
+    content: "";
+    width:100%;
+    height: 70%;
+    background: linear-gradient(rgba(var(--c-brand-rgb), 0.585),rgba(var(--c-brand-rgb), 0.585)), url(../images//home2.JPG);
+    background-position: center;
+    background-size:cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#book .form-control{
+    border-radius: 0;
+}
+#book .form-control:focus{
+    box-shadow: none;
+    border-color: var(--c-brand);
+}
+
+
+/* BTN */
+.btn {
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 10px 24px;
+}
+
+.btn-brand {
+    background-color: var(--c-brand);
+    border-color: var(--c-brand);
+    color: white;
+}
+
+.btn-brand:hover {
+    background-color: var(--c-brand-light);
+    border-color: var(--c-brand-light);
+    color: white;
+}
+/* FOOTER */
+footer {
+    padding-top: 120px;
+}
+
+.footer-top {
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-bottom {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+footer li,
+footer p,
+footer a {
+    color: rgba(255,255,255,0.7);
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .line {
+    width: 40px;
+    height: 4px;
+    background-color: var(--c-brand);
+    margin-top: 12px;
+    margin-bottom: 24px;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 100px;
+}
+
+.social-icons a:hover {
+    background-color: var(--c-brand);
+    color: white;
+}
+
+
+
+/* GALLERY */
+#portfolio .container-fluid, #portfolio .container-sm, #portfolio .container-md, #portfolio .container-lg, #portfolio .container-xl, #portfolio .container-xxl {
+    max-width: 1920px;
+  }
+  #portfolio .container-fluid .portfolio-box, #portfolio .container-sm .portfolio-box, #portfolio .container-md .portfolio-box, #portfolio .container-lg .portfolio-box, #portfolio .container-xl .portfolio-box, #portfolio .container-xxl .portfolio-box {
+    position: relative;
+    display: block;
+  }
+  #portfolio .container-fluid .portfolio-box .portfolio-box-caption, #portfolio .container-sm .portfolio-box .portfolio-box-caption, #portfolio .container-md .portfolio-box .portfolio-box-caption, #portfolio .container-lg .portfolio-box .portfolio-box-caption, #portfolio .container-xl .portfolio-box .portfolio-box-caption, #portfolio .container-xxl .portfolio-box .portfolio-box-caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    opacity: 0;
+    color: #fff;
+    background: var(--c-brand);
+    transition: opacity 0.25s ease;
+    text-align: center;
+  }
+  #portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-sm .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-md .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-lg .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-xl .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-xxl .portfolio-box .portfolio-box-caption .project-category {
+    font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  #portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-name, #portfolio .container-sm .portfolio-box .portfolio-box-caption .project-name, #portfolio .container-md .portfolio-box .portfolio-box-caption .project-name, #portfolio .container-lg .portfolio-box .portfolio-box-caption .project-name, #portfolio .container-xl .portfolio-box .portfolio-box-caption .project-name, #portfolio .container-xxl .portfolio-box .portfolio-box-caption .project-name {
+    font-size: 1.2rem;
+  }
+  #portfolio .container-fluid .portfolio-box:hover .portfolio-box-caption, #portfolio .container-sm .portfolio-box:hover .portfolio-box-caption, #portfolio .container-md .portfolio-box:hover .portfolio-box-caption, #portfolio .container-lg .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xl .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xxl .portfolio-box:hover .portfolio-box-caption {
+    opacity: 1;
+  }
+
+
   
+  #confirmation-message {
+    display: none;
+    position: relative;
+    background-color: var(--c-brand); /* Use your brand color */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-top: 20px; /* Adjust margin as needed */
+    opacity: 0.7;
+}
+
+
+#confirmation-message::before {
+    font-family: var(--font-base);
+    font-weight: 900;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+
+
+
 
 
 
